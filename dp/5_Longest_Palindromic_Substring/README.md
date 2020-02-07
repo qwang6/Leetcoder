@@ -1,10 +1,11 @@
 这道题目有两种比较通用的解法。
 #### 解法一：DP
 
+dp[i][j]: 代表从i到j的这段子字符串是否是回文。所以如果s.charAt(i) == s.charAt(j)相等的话，如果i+1到j-1这段substring是回文，则i到j这段substring也是回文。
 
-    dp[i][j]: 代表从i到j的这段子字符串是否是回文。所以如果s.charAt(i) == s.charAt(j)相等的话，如果i+1到j-1这段substring是回文，则i到j这段substring也是回文。
-    dp[i][i]都是true，因为一个字符也是回文。
-    用一个变量maxLen来检查最长的回文串长度，如果当前回文串长度大于maxLen，则更新maxLen以及start和end
+dp[i][i]都是true，因为一个字符也是回文。
+
+用一个变量maxLen来检查最长的回文串长度，如果当前回文串长度大于maxLen，则更新maxLen以及start和end
 
 
 #### 解法二：
