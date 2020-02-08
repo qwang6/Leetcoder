@@ -1,7 +1,7 @@
 这个题目是一道典型的二维DP。
 dp[i][j]代表ith天，jth工作所需要的最少的difficulty
 找一个中间点k，求dp[i-1][k-1]+min(max(k,j))
-
+注意这题的初始化条件，当d只有一天的时候，dp[1][j]代表的是从0到j之间的最大的数。
 ```
 class Solution {
     /**
