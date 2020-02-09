@@ -7,6 +7,7 @@ Math.max(a[0],b[0]) <= Math.min(a[1], b[1]) 则相交.
 class Solution {
     public List<List<Integer>> removeInterval(int[][] intervals, int[] toBeRemoved) {
         List<List<Integer>> ans = new ArrayList<>();
+        // 这个解法都是用排除的思路，所以会省了很多的判断，这个思路需要掌握
         for (int[] i : intervals) {
             if (i[1] <= toBeRemoved[0] || i[0] >= toBeRemoved[1]) { // no overlap.
                 ans.add(Arrays.asList(i[0], i[1]));
