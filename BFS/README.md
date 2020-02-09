@@ -124,8 +124,9 @@ This is still a multiple sources (the most outside boundary, the inner boundarie
 Need some additional information to hold to continue the BFS among all neighbors, i.e. at a particular position x, y, holding different information will decide the whether you can go further, so the queue should store position x, y and the addition status, all these are defined as one UNIQUE state
 
 #### Example
+```
 864. Shortest Path to Get All Keys
 847. Shortest Path Visiting All Nodes
 State definition: the path that ends with node x and all nodes visited so far
 End state: the path that ends with a node x and all nodes visited so far contains every node in the graph, the number of steps required in current path is final result
-
+```
