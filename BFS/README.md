@@ -1,10 +1,14 @@
 ### Shortest Path Between Single Source To Single Destination
-Pattern:
+#### Pattern:
 Given one start state, find out the shortest path to another destination state
 There might be some constraints on the path, e.g. walls, limited words in a dictionary, dead ends, etc
+
 Within the shortest path, same state should be visited at most once, this requires maintain a visited array during traversing a path, should not release the state’ visited status (this is different than DFS backtracking where we must release the state)
+
 Usually need to maintain a variable steps to indicate number of transitions from one state to another, different problems may use this concept differently, e.g. result needed from Word Ladder I = steps + 1
-Code template
+
+#### Code template
+```
 Queue<String> queue = new LinkedList<>();
 queue.add(start);    // add the initial state
 Set<String> visited = new HashSet<>();
@@ -32,8 +36,10 @@ while (!queue.isEmpty()) {
     }
 }
 return -1;
+```
 
-Example
+#### Example
+```
 339. Nested List Weight Sum
 364. Nested List Weight Sum II
 * source is the top level, destination is the bottom level
@@ -47,10 +53,11 @@ Example
 854. K-Similar Strings (more generic BFS problem)
 * initial state is string A, end state is string B, ask for the min swaps (k) to convert A to B, this might not be so straightforward as a BFS problem, we should think BFS as more generic from state to state, instead of just position x to position y
 * find out the neighbors of a given state is key (also make this problem more challenge than others) to solve this problem, i.e. smartly pick the j-th char to switch with i-th which can cause less BFS steps
-
+```
 
 ### Shortest Path Between Single Source To Multiple Destinations
-Example:
+#### Example:
+```
 675. Cut Off Trees for Golf Event
 * Given a start point, ask for the total steps to reach to all destinations (trees) with ordered.
 * First sort the destinations
@@ -61,11 +68,14 @@ Example:
 * The order of the key to retrieve is unknown, but it also matters, as the keys retrieved so far can decide whether can pass some locks.
 * If we simulate permutations of all keys, one of them indicates the right order of keys to be retrieved, then just do BFS to traverse each key in this permutation as destination (same as 675). However, getting the permutations take K! and it takes too much time
 * A better way is do BFS with keys hold as one of state information, the goal is to hit a position where all the keys have been retrieved
+```
 
-Shortest Path Between Multiple Sources and Multiple Destinations
-Pattern:
+### Shortest Path Between Multiple Sources and Multiple Destinations
+#### Pattern:
 Starting state contains any of the source, destination points are not unique, for some problems, end state is one of destination is met, for others, end state is all destinations must be met
-Example:
+
+#### Example:
+```
 934. Shortest Bridge
 * Find out the shortest path between any of sources to any of the destinations
 * DFS first to isolate all cells in island 1 (as the sources, all cells in the rest of island as destinations)
@@ -105,14 +115,15 @@ To have water trapped in a particular position, there must be higher neighbors a
 The most outside boundary position can not hold any water as no higher neighbor outside it, but the boundary can help decide whether the inner neighbors can hold water
 combine the above, we start from the lowest boundary, do a BFS to its all neighbors, any inner neighbor that is lower than this boundary can hold water, keep adding the new inner neighbor to the queue for next level BFS
 This is still a multiple sources (the most outside boundary, the inner boundaries) to multiple destination
-
+```
 
 
 
 ### Shortest Path with 3D State
-Pattern
+#### Pattern
 Need some additional information to hold to continue the BFS among all neighbors, i.e. at a particular position x, y, holding different information will decide the whether you can go further, so the queue should store position x, y and the addition status, all these are defined as one UNIQUE state
-Example
+
+#### Example
 864. Shortest Path to Get All Keys
 847. Shortest Path Visiting All Nodes
 State definition: the path that ends with node x and all nodes visited so far
