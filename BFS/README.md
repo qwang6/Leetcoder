@@ -1,7 +1,6 @@
 ### Shortest Path Between Single Source To Single Destination
 #### Pattern:
-Given one start state, find out the shortest path to another destination state
-There might be some constraints on the path, e.g. walls, limited words in a dictionary, dead ends, etc
+Given one start state, find out the shortest path to another destination state. There might be some constraints on the path, e.g. walls, limited words in a dictionary, dead ends, etc
 
 Within the shortest path, same state should be visited at most once, this requires maintain a visited array during traversing a path, should not release the state’ visited status (this is different than DFS backtracking where we must release the state)
 
