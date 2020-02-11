@@ -89,6 +89,7 @@ class Solution {
             }
             j++;
         }
+        // 不要忘了最后一段窗口
         if (i != j)
             max = Math.max(max, longestSubstring(s.substring(i, j), k));
 
