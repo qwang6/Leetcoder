@@ -59,6 +59,7 @@ class Solution {
 * 统计原始字符串s中各字符的出现次数，统计其中出现次数少于k次的字符，得到数组filters。
 * 若filters为空数组，则直接返回s的长度。
 * 以filters为分隔符，将s拆分为若干子串，分别递归计算各子串的结果，返回最大值。
+![例如,](./395_1.png)
 ```
     public int longestSubstring(String s, int k) {
         HashMap<Character, Integer> counter = new HashMap<>();
