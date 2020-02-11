@@ -20,7 +20,7 @@ class Solution {
 }
 ```
 
-### 对比看340. Longest Substring with At Most K Distinct Characters
+#### 对比看340. Longest Substring with At Most K Distinct Characters
 这道题是求最大长度内的district character不超过K， 这里只考虑distinct的，而上题要的是被替换的个数。比如aaaaabbbb，distinct的character是2个，但是如果被替换成相同的character的话，最少要替换4个b，这就是这两道题的区别。
 ```
 class Solution {
