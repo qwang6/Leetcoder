@@ -2,9 +2,9 @@
 ```
 例如， 如果label是14的话，
 
-depth = 3, values in this depth lie from 8 to 15 (since it is a complete binary tree)
-offset = 15 - 14 = 1
-real parent of 14 = parent of ( 8 + offset ) = parent (9) = 9/2 = 4
+树的深度，从0开始的。depth = 3, values in this depth lie from 8 to 15 (since it is a complete binary tree)
+当前层的偏移量，offset = 15 - 14 = 1
+计算当前节点的父节点的位置，real parent of 14 = parent of ( 8 + offset ) = parent (9) = 9/2 = 4
 ```
 
 ```java
