@@ -37,3 +37,22 @@ class Solution {
     }
 }
 ```
+
+#### 543. Diameter of Binary Tree
+这道题与上面的题基本一模一样，只不过上面的是一棵数，每个节点有不知道几个子节点，而543这题是一棵二叉树，每个节点最多有两个子节点。
+```java
+class Solution {
+    private int res = 0;
+    public int diameterOfBinaryTree(TreeNode root) {
+        dfs(root);
+        return res;
+    }
+    private int dfs(TreeNode node) {
+        if (node == null) return 0;
+        int left = dfs(node.left);
+        int right = dfs(node.right);
+        res = Math.max(res, left + right);
+        return Math.max(left, right) + 1;
+    }
+}
+```
