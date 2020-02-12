@@ -1,7 +1,7 @@
 这道题有两种解法，一种是BFS，写起来比较简单，但是时间和空间复杂度要高；另一种是Union Find + DFS，写起来比较麻烦，但是运行效率要高。这题的难度应该属于hard级别，属于hard里面的easy的，感觉难度系数标错了
 #### BFS解法
 首先创建graph，单词对单词的连接。bfs是搜索连接后的字符串。在每一个循环中又套另外一个子循环，子循环是找该字符串中的单词是否有同义词，如果有则替换，然后合成新的句子放入queue中。
-```
+```java
 class Solution {
     public List<String> generateSentences(List<List<String>> synonyms, String text) {
         Map<String, List<String>> graph = new HashMap<>();
@@ -43,7 +43,7 @@ class Solution {
 
 #### UnionFind + DFS解法
 首先先用union find方法把所有的近义词连接成连通分量，然后用dfs方法去搜索合成新的text。
-```
+```java
 class Solution {
     private Map<String, String> root = new HashMap<>();
     private List<String> res = new ArrayList<>();
