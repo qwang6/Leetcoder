@@ -7,7 +7,7 @@ Within the shortest path, same state should be visited at most once, this requir
 Usually need to maintain a variable steps to indicate number of transitions from one state to another, different problems may use this concept differently, e.g. result needed from Word Ladder I = steps + 1
 
 #### Code template
-```
+```Java
 Queue<String> queue = new LinkedList<>();
 queue.add(start);    // add the initial state
 Set<String> visited = new HashSet<>();
