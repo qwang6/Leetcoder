@@ -1,6 +1,6 @@
 这是一道基本的Trie的题目，唯一变化就是加了一个PriorityQueue
 
-```
+```java
 class Solution {
     class Trie {
             Trie[] sub = new Trie[26];
