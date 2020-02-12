@@ -7,7 +7,7 @@ offset = 15 - 14 = 1
 real parent of 14 = parent of ( 8 + offset ) = parent (9) = 9/2 = 4
 ```
 
-```
+```java
 class Solution {
     /**
         Calculate current depth of the label
