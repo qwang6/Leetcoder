@@ -1,5 +1,5 @@
 这道题明显Greedy的算法，先移除出现次数最多的，没啥好说的。唯一要注意的是很多时候为了方便要建立一个类来存储更多的信息。
-```
+```java
 class Solution {
     class Node {
         int num, count;
