@@ -18,7 +18,7 @@ dp的长度一般是n+1，原因是要padding一位这样可以是的下标从1�
     */
 ```
 
-```
+```java
     public boolean isMatch(String s, String p) {
         if (s == null && p == null) return true;
         if (s == null || p == null) return false;
