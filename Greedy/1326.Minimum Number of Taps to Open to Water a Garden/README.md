@@ -24,7 +24,7 @@ public int videoStitching(int[][] clips, int T) {
 ### greedy ###
 这道题目可以变换一下就成了45. Jump Game II和1024. Video Stitching一样的类型。变成区间后按start进行排序，用贪心的算法去找每一轮的能到达的最远的end。如果每轮结束时start==end，则说明无法再往后走了。如果start!=end,把end赋值给start然后再去下一轮去找能到达的最远距离。在每一轮结束时count++。
 
-```
+```java
 class Solution {
     // 同1024题, greedy solution
     public int minTaps(int n, int[] ranges) {
@@ -51,7 +51,7 @@ class Solution {
 }
 ```
 #### 45. Jump Game II
-```
+```java
 class Solution {
     public int jump(int[] nums) {
         if (nums == null || nums.length == 0) return 0;
