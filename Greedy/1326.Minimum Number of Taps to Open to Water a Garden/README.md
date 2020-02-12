@@ -3,7 +3,7 @@
 ### dynamic programming ###
 dp的实现就是类似背包问题，下面的实现是1024 Video Stitching的DP解法：
 
-```
+```java
 dp[i]: 代表到i时间的位置最少需要几个影片
 
 public int videoStitching(int[][] clips, int T) {
@@ -71,7 +71,7 @@ class Solution {
 }
 ```
 #### 1024. Video Stitching
-```
+```java
 class Solution {
     public int videoStitching(int[][] clips, int T) {
         int res = 0;
