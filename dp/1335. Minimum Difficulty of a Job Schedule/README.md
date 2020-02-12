@@ -3,7 +3,7 @@ dp[i][j]代表ith天，jth工作所需要的最少的difficulty
 找一个中间点k，求dp[i-1][k-1]+min(max(k,j))
 注意这题的初始化条件，当d只有一天的时候，dp[1][j]代表的是从0到j之间的最大的数。
 getMax(int[] arr, int i, int j)这个函数，代表取得从j到i之间，从右到左的最大的值。
-```
+```java
 class Solution {
     /**
     In the code, i represents i-th day, j represents j-th work, k represents k-th work.
