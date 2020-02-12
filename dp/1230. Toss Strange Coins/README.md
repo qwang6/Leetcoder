@@ -9,6 +9,7 @@ class Solution {
         double[] dp = new double[target + 1];
         dp[0] = 1.0;
         for (int i = 0; i < prob.length; ++i)
+            // 这里使用降维处理，所以要从后往前走，要不然就覆盖了上一轮k-1的结果
             for (int k = Math.min(i + 1, target); k >= 0; --k)
                 dp[k] = (k > 0 ? dp[k - 1] : 0) * prob[i] + dp[k] * (1 - prob[i]);
         return dp[target];
