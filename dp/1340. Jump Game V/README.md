@@ -1,6 +1,6 @@
 下面使用的是dfs+memo,这里需要注意的是只能往两边更低的地方走，不能跨过高的再到低的地方。
 Jump Game系列是很好的一类题型，里面包括Greedy，DP，BFS，该题型变换很多，需要好好掌握。
-```
+```java
 class Solution {
     private Map<Integer,Integer> memo = new HashMap<>();
     
