@@ -1,7 +1,7 @@
 - 这道题用TreeMap来解，key是Time，value是在该时间的时候的候选人。
 - 这题还可以用二分法来做，就是找到t时间的下边界。
 
-```
+```java
 class TopVotedCandidate {
 
     private TreeMap<Integer, Integer> tm = new TreeMap<>();
