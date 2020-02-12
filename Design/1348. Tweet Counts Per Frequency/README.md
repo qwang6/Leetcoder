@@ -1,6 +1,6 @@
 这道设计题目是设计一个系统可以记录tweet的时间，并根据一个区间返回这个tweet在这段区间的发生的频率，按分钟，小时，或者天来进行bucket。
 这种题目一般都要用TreeMap这个数据结构，利用其key是排序的，可以获得一个区间的subMap。
-```
+```java
 class TweetCounts {
     private Map<String, TreeMap<Integer, Integer>> map;
     
