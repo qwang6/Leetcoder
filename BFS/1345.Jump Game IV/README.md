@@ -1,7 +1,7 @@
 Jump Game IV是Jump Game系列里面的另外一种类型。前面的几个题目基本都可以用Greedy的方法解，但是这个题目是需要用BFS的方法解，而且是要从后往前(从n-1到0)进行广度优先搜索。在做bfs的时候要注意把已经走过的list清空，要不就会陷入死循环。
 在比赛的时候第一感觉就想用dfs+memo，但是没有成功。
 
-```
+```Java
 class Solution {
     public int minJumps(int[] arr) {
         int n = arr.length;
