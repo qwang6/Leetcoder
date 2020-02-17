@@ -22,30 +22,34 @@ dp的长度一般是n+1，原因是要padding一位这样可以是的下标从1�
     public boolean isMatch(String s, String p) {
         if (s == null && p == null) return true;
         if (s == null || p == null) return false;
-        
-        boolean[][] dp = new boolean[s.length()+1][p.length()+1];
+
+        int m = s.length(), n = p.length();
+        boolean[][] dp = new boolean[m+1][n+1];
         dp[0][0] = true;
-        for (int i = 0; i < p.length(); i++) {
-            if (p.charAt(i) == '*')
+        for (int i = 0; i < n; i++) {
+            if (p.charAt(i) == '*') {
+                // assume the '*' and the previous character as empty
                 dp[0][i+1] = dp[0][i-1];
+            }
         }
-        
-        for (int i = 0; i < s.length(); i++) {
-            for (int j = 0; j < p.length(); j++) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
                 char c1 = s.charAt(i);
                 char c2 = p.charAt(j);
-                if (c1 == c2 || c2 == '.')
+                if (c1 == c2 || c2 == '.') {
                     dp[i+1][j+1] = dp[i][j];
-                else if (c2 == '*'){
-                    char prevP = p.charAt(j - 1);
-                    if (prevP != '.' && prevP != c1)
+                }  else if (c2 == '*') {
+                    if (s.charAt(i) != p.charAt(j-1) && p.charAt(j-1) != '.') {
+                        // // assume the '*' and the previous character as empty
                         dp[i+1][j+1] = dp[i+1][j-1];
-                    else {
-                        dp[i+1][j+1] = dp[i+1][j-1] || dp[i+1][j] || dp[i][j+1];
-                    }     
+                    } else {
+                        dp[i+1][j+1] = dp[i][j+1]   // a* counts as multiple a
+                                    || dp[i+1][j-1] // a* counts as empty
+                                    || dp[i+1][j];  // a* counts as single a
+                    }
                 }
             }
         }
-        return dp[s.length()][p.length()];
+        return dp[m][n];
     }
 ```
