@@ -2,6 +2,7 @@
 * 时间复杂度：O(n)
 * 空间复杂度：O(1) (这题规定递归调用栈不算占空间)
 
+这题还有利用Morris中序遍历的方法，那个是真正的O(1)的空间复杂度。
 ```java
 class Solution {
     private Integer prev = null;
