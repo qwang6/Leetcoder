@@ -14,6 +14,7 @@ dp[i][j]   = {true if some subset from 1st to j'th has a sum equal to sum i, fal
 ```
 
 ```java
+在S/2的范围内找一个最大值其是可以由这个数组的subset相加得到的
 // 因为当前值只于上一轮的值相关，所以可以利用滚动数组降维
 // 利用滚动数组降维时，由于要使用上一轮的值，所以在当前轮要从后往前走，这样才不会覆盖上一轮的值
 class Solution {
