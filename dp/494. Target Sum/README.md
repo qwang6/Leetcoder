@@ -17,6 +17,7 @@ class Solution {
         for (int num : nums) {
             int[] next = new int[2*sum+1];
             for (int i = 0; i< 2*sum+1; i++) {
+                // 这里采用push的方式
                 if (i+num>=0 && i+num<2*sum+1) next[i+num] += dp[i];
                 if (i-num>=0 && i-num<2*sum+1) next[i-num] += dp[i];
             }
