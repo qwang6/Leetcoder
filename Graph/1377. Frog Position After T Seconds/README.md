@@ -26,6 +26,7 @@ class Solution {
     //                     prob[v] = prob[u] / nextVerticesCount;
     //                 }
     //             }
+    //             这里就是node==target在中间节点，并且当前node不是叶子节点
     //             if (nextVerticesCount > 0) prob[u] = 0; // still have next vertices to jump, frog keep going to the next vertex
     //         }
     //     }
